@@ -1,12 +1,12 @@
 import mysql from "mysql2/promise";
 
 const connection = mysql.createPool({
-	host: "localhost",
-	user: "root",
-	password: "root",
-	database: "flatmate_tasks",
+	host: process.env.DATABASE_HOST,
+	user: process.env.DATABASE_USER,
+	password: process.env.DATABASE_PASSWORD,
+	database: process.env.DATABASE_NAME,
 	waitForConnections: true,
-	connectionLimit: 10,
+	connectionLimit: 5,
 	queueLimit: 0,
 });
 
